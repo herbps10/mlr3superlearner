@@ -25,3 +25,7 @@ set_folds <- function(n, outcome_type, target) {
   cli::cli_alert_info("n effective = {neff}. Setting cross-validation folds as {folds}")
   folds
 }
+
+bound <- function(x, p = 1e-5) {
+  pmax(pmin(x, 1 - p), p)
+}

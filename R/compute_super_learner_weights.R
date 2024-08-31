@@ -31,4 +31,4 @@ compute_loss <- function(x, y, outcome_type, group) {
 }
 
 loss_mse <- function(x, y) mean((x - y)^2)
-loss_nll <- function(x, y) -mean(y*log(x) + (1 - y)*log(1 - x))
+loss_nll <- function(x, y) -mean(y*log(bound(x)) + (1 - y)*log(1 - bound(x)))
